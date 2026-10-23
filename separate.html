@@ -1,88 +1,86 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Muslim 2 — Separate Material</title><style>
-:root{--bg:#fbfaf6;--fg:#1d1d1b;--mute:#6b6a64;--link:#1a4fb4;--rule:#cfcbbf;--card:#ffffff;--note:#f1eee3}
-@media (prefers-color-scheme:dark){:root{--bg:#161614;--fg:#e8e6df;--mute:#9b988c;--link:#7fa8ff;--rule:#3a3935;--card:#1e1e1b;--note:#25241f}}
+:root{--bg:#fbfaf6;--fg:#1d1d1b;--mute:#6b6a64;--link:#1a4fb4;--rule:#cfcbbf;--card:#ffffff;--note:#f1eee3;--hl:#e4e1d4}
+@media (prefers-color-scheme:dark){:root{--bg:#161614;--fg:#e8e6df;--mute:#9b988c;--link:#7fa8ff;--rule:#3a3935;--card:#1e1e1b;--note:#25241f;--hl:#37352c}}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.6 Georgia,'Times New Roman',serif}
 .wrap{max-width:46rem;margin:0 auto;padding:1.5rem 16px 4rem}
 h1{font-size:1.6rem;margin:.2rem 0 .3rem;letter-spacing:.02em}
-h2{font-size:1.2rem;margin:.2rem 0 .6rem}
+h2{font-size:1.15rem;margin:.2rem 0 .7rem;line-height:1.35}
 .lede{color:var(--mute);font-size:.95rem;margin:.2rem 0 1.2rem}
 hr{border:0;border-top:1px solid var(--rule);margin:1.2rem 0}
-a{color:var(--link);text-decoration:none}a:hover{text-decoration:underline}
-.grp{font-weight:bold;margin:1.4rem 0 .3rem;font-size:.98rem;border-bottom:1px solid var(--rule);padding-bottom:.15rem}
-.toc a.row{display:flex;align-items:baseline;gap:.4rem;padding:.18rem 0;color:var(--link)}
+hr.dots{border-top:2px dotted var(--rule);margin:.9rem 0}
+a{color:var(--link);text-decoration:none;overflow-wrap:anywhere}a:hover{text-decoration:underline}
+.grp{font-weight:bold;margin:1.5rem 0 .35rem;font-size:.95rem;line-height:1.35;border-bottom:1px solid var(--rule);padding-bottom:.2rem}
+.toc a.row{display:flex;align-items:baseline;gap:.4rem;padding:.2rem 0;color:var(--link)}
 .toc .t{flex:0 1 auto}
-.toc .dots{flex:1 1 1.5rem;min-width:1.5rem;border-bottom:2px dotted var(--rule);transform:translateY(-.25em)}
+.toc .dots{flex:1 1 1.2rem;min-width:1.2rem;border-bottom:2px dotted var(--rule);transform:translateY(-.25em)}
 .toc .n{flex:none;font-variant-numeric:tabular-nums;color:var(--fg)}
-.page{background:var(--card);border:1px solid var(--rule);border-radius:6px;padding:1rem 1.1rem 1.2rem;margin:1.2rem 0;position:relative}
-.pno{position:absolute;top:.5rem;right:.8rem;color:var(--mute);font-size:.85rem}
-.back{display:inline-block;font-size:.88rem;margin-bottom:.4rem}
-.page p{margin:.5rem 0;overflow-wrap:anywhere}
-.cap{background:var(--note);color:var(--mute);font-size:.82rem;line-height:1.4;padding:.35rem .6rem;border-radius:4px;margin-top:.2rem!important}
-.sub{color:var(--mute);font-size:.85rem;text-align:center;margin:1rem 0 .2rem!important}
-.ar{font-style:italic;color:var(--mute)}
+.page{background:var(--card);border:1px solid var(--rule);border-radius:6px;padding:1.1rem 1.1rem 1.2rem;margin:1.2rem 0;position:relative}
+.pno{position:absolute;top:.45rem;right:.8rem;color:var(--mute);font-size:.85rem}
+.src{position:absolute;top:.45rem;left:.8rem;color:var(--mute);font-size:.7rem;letter-spacing:.04em}
+.back{display:inline-block;font-size:.88rem;margin:.9rem 0 .3rem}
+.page p{margin:.55rem 0;overflow-wrap:anywhere}
+.pp{color:var(--mute);font-size:.78rem;text-align:center;border-top:1px solid var(--rule);margin:1.1rem 0 .4rem;padding-top:.3rem;letter-spacing:.05em;text-transform:uppercase}
+.pp:first-of-type{border-top:0;margin-top:.8rem}
+mark{background:var(--hl);color:inherit;padding:0 .1em}
+.dia{margin:.8rem 0;font-family:Arial,Helvetica,sans-serif;font-size:.92rem;line-height:1.4}
+.dia .bx{border:1px solid var(--fg);padding:.5rem .7rem;margin:.5rem 0;text-align:center;border-radius:2px}
+.dia .hd,.dia .ttl{text-align:center;margin:.4rem 0}
+.dia .ttl{font-size:1.05rem}.dia .ttl2{text-align:center;margin:.4rem 0}
+.dia .arrows,.dia .opp{text-align:center;color:var(--mute);margin:.2rem 0}
+.dia .fig{border:1px dashed var(--rule);color:var(--mute);padding:.6rem;text-align:center;font-size:.82rem;margin:.5rem 0}
+.dia .capt{text-align:center;color:var(--mute);font-size:.85rem}
+.dia .ex{text-align:left}
+.dia .dt{text-align:center;font-size:1.2rem;margin:.2rem 0 .6rem}
+.dia .note{text-align:left}
+.tbl{border-collapse:collapse;width:100%;font-family:Arial,Helvetica,sans-serif;font-size:.9rem;margin:.8rem 0}
+.tbl td,.tbl th{border:1px solid var(--fg);padding:.5rem;text-align:center;vertical-align:top}
+.tbl tr.sh td{background:var(--hl)}
+.tbl td.lab{width:5.5rem}
+.tree{display:flex;flex-direction:column;align-items:center;gap:.6rem}
+.tree .trow{display:flex;gap:.6rem;justify-content:center;width:100%}
+.tree .tbox{border:1px solid var(--fg);padding:.5rem .8rem;text-align:center;flex:1 1 0;min-width:0}
+.tree .root{flex:none;min-width:5rem}
 .foot{color:var(--mute);font-size:.85rem}
-@media (max-width:520px){body{font-size:16px}.page{padding:.9rem .8rem 1rem}.pno{position:static;display:block;text-align:right}}
+ul.om{color:var(--mute);font-size:.85rem;padding-left:1.1rem}
+@media (max-width:520px){body{font-size:16px}.page{padding:1rem .8rem 1rem}.tree .trow{flex-direction:column}}
 </style></head>
 <body><div class="wrap" id="top">
 <h1>Muslim 2 — Separate Material</h1>
-<p class="lede">Pages kept apart from the main table of contents. <a href="index.html">← Back to the main Fihris</a></p>
+<p class="lede">Pages kept apart from the main Fihris. <a href="index.html">← Back to the main Fihris</a></p>
 <hr>
-<nav class="toc" aria-label="Fihris"><a class="row" href="#e1"><span class="t">1. Dawrat al-Hadith study plan, Al-Jami&#x27;ah al-Binnoriyyah al-&#x27;Alamiyyah (Arabic table)</span><span class="dots"></span><span class="n">1</span></a><a class="row" href="#e2"><span class="t">2. Differences between Islamic and conventional financial instruments (Mufti Faraz al-Mahmudi)</span><span class="dots"></span><span class="n">3</span></a><a class="row" href="#e3"><span class="t">3. Three core questions in any financial matter (alqalam.org.uk); wealth inequality</span><span class="dots"></span><span class="n">4</span></a></nav>
+<nav class="toc" aria-label="Fihris"><a class="row" href="#e1"><span class="t">1. Differences Between Islamic and Conventional Financial Instruments (Mufti Faraz al-Mahmudi)</span><span class="dots"></span><span class="n">1</span></a><a class="row" href="#e2"><span class="t">2. 3 Core Issues in any business / financial matter (alqalam.org.uk) · Extreme wealth inequality and disparity</span><span class="dots"></span><span class="n">2</span></a></nav>
 <hr>
-<p class="foot">Arabic quotations and footnotes are summarized, not copied in full. Handwritten margin notes are recorded in the grey caption above each page. Page numbers here count the photographed sheets in this order; they are not the original printed page numbers.</p>
-<section class="page" id="p1"><span class="pno">1</span><a class="back" href="#top">← Back to Fihris</a><h2 id="e1">1. Dawrat al-Hadith study plan, Al-Jami&#x27;ah al-Binnoriyyah al-&#x27;Alamiyyah (Arabic table)</h2><p class="cap">Photo IMG_5294: Printed page. Topic: study plan (makhtat al-dirasah) for Dawrat al-Hadith, Al-Jami&#x27;ah al-Binnoriyyah al-&#x27;Alamiyyah, Wafideen section. Arabic table; English: only the stamp and row labels like &quot;1-a&quot;, &quot;1-b&quot;.</p>
-<p class="">Header (Arabic): Shu&#x27;bat al-Wafidin, Al-Jami&#x27;ah al-Binnoriyyah al-&#x27;Alamiyyah; &quot;makhtat al-dirasah li-dawrat al-hadith&quot;</p>
-<p class="">Columns: number (al-raqm), subject (al-madda), details (tafsil al-madda), weekly lessons (al-hisas al-usbu&#x27;iyyah), annual lessons (al-hisas al-sanawiyyah), marks (al-darajat).</p>
-<p class="">Rows:</p>
-<p class="" style="margin-left:0.5em">1-a Hadith 1: Sahih al-Bukhari part 1 (bad&#x27; al-wahy, al-iman, al-&#x27;ilm, al-tahajjud, fada&#x27;il al-Madinah, al-kafalah, al-wakalah, al-sharikah, al-rahn, al-shahadat, al-sulh, shurut, bad&#x27; al-khalq, ahadith al-anbiya&#x27;, bab bunyan al-Ka&#x27;bah): 6, 198, 50</p>
-<p class="" style="margin-left:0.5em">1-b Sahih al-Bukhari part 2: &quot;tadwin al-hadith wa hujjiyyat al-hadith&quot;; kitab al-maghazi, al-tafsir, fada&#x27;il al-Qur&#x27;an, marda, qadar, muharibin, istitabat al-murtaddin, al-ikrah wal-hiyal, al-ta&#x27;bir, akhbar al-ahad, i&#x27;tisam, al-radd &#x27;ala al-Jahmiyyah (al-tawhid): 6, 198, 50</p>
-<p class="" style="margin-left:0.5em">2-a Hadith 2: Sahih Muslim part 1 (muqaddimat Muslim, al-iman, al-masajid, al-rada&#x27;ah): 5, 165, 50</p>
-<p class="" style="margin-left:0.5em">2-b Sahih Muslim part 2: &quot;asbab ikhtilaf al-riwayat wa daf&#x27; ta&#x27;arud al-riwayat&quot;; kitab al-buyu&#x27;, al-musaqat, al-hibat, al-wasiyyah, al-aqdiyah, al-imarah, al-libas wal-zinah, al-salam, al-alfaz min al-adab wa ghayriha, al-shi&#x27;r, al-fada&#x27;il: 6, 198, 50</p>
-<p class="" style="margin-left:0.5em">3 Usul al-bahth al-&#x27;ilmi (principles of scientific research): al-Khulasa fi al-bahth al-&#x27;ilmi (Dr Muhammad ibn Ibrahim al-Hamad); writing a 30-page scientific research paper according to international standards: 1, 33, 100</p>
-<p class="" style="margin-left:0.5em">4 Hadith 3: Sunan Abi Dawud (zakat, manasik, siyam, talaq, nikah, jihad, dahaya, sayd, fara&#x27;id, aiman and nudhur, ijarah, ashribah, tibb up to bab ta&#x27;liq al-tama&#x27;im, to bab fi al-sunnah, huruf and qira&#x27;at, libas, hudud, diyat, adab): 6, 198, 100</p>
-<p class="" style="margin-left:0.5em">5-a Hadith 4: al-Tirmidhi part 1: &quot;dawabit al-jarh wal-ta&#x27;dil&quot;; al-taharah, al-salah, al-witr, al-jum&#x27;ah, al-&#x27;idayn, al-safar, al-jana&#x27;iz, al-ahkam, &#x27;ilal al-Tirmidhi: 6, 198, 50</p>
-<p class="" style="margin-left:0.5em">5-b al-Tirmidhi part 2 (al-at&#x27;imah, al-birr wal-silah, al-tibb, al-fitan, al-ru&#x27;ya, sifat al-jannah, sifat jahannam, al-isti&#x27;dhan wal-adab, al-amthal, al-da&#x27;awat): 5, 165, 50</p>
-<p class="" style="margin-left:0.5em">6-a Shama&#x27;il al-Tirmidhi: 1, 33, 50</p>
-<p class="" style="margin-left:0.5em">6-b Hadith 5: al-Muwatta of Imam Malik (mawaqit al-salah, kitab al-jami&#x27;): 1, 33, 50</p>
-<p class="">(continues on the next page)</p></section><section class="page" id="p2"><span class="pno">2</span><p class="cap">Photo IMG_5295: Printed page (continuation of the Dawrat al-Hadith study plan, Al-Jami&#x27;ah al-Binnoriyyah al-&#x27;Alamiyyah). Arabic only; header with the two university logos; a faint mirrored stamp at top left.</p>
-<p class="">Rows:</p>
-<p class="" style="margin-left:0.5em">6-c Hadith 6: al-Muwatta of Imam Muhammad (al-zakah, al-nikah, abwab al-siyar to the end): no hours listed</p>
-<p class="" style="margin-left:0.5em">7-a Hadith 7: Sharh Ma&#x27;ani al-Athar of Imam al-Tahawi; &quot;asbab ikhtilaf al-a&#x27;immah&quot;; (al-taharah, al-salah): 4 weekly, 132 annual, 50 marks</p>
-<p class="" style="margin-left:0.5em">7-b Hadith 8: Sunan al-Nasa&#x27;i (kitab al-bay&#x27;ah, al-isti&#x27;adhah): 1 weekly, 33 annual, 50 marks [the hours cell is shared with 7-c]</p>
-<p class="" style="margin-left:0.5em">7-c Hadith 9: Sunan Ibn Majah (iftitah al-kitab, fi al-iman, fada&#x27;il al-sahabah wal-&#x27;ilm; ta&#x27;yin al-riwayat al-mawdu&#x27;ah in the light of the risalah &quot;ma tamussu ilayhi al-hajah&quot;)</p>
-<p class="">Total (al-majmu&#x27;): 700 marks, 1386 annual lessons, 42 weekly lessons.</p></section><section class="page" id="p3"><span class="pno">3</span><a class="back" href="#top">← Back to Fihris</a><h2 id="e2">2. Differences between Islamic and conventional financial instruments (Mufti Faraz al-Mahmudi)</h2><p class="cap">Photo IMG_5296: Printed page. Handwritten Arabic at the top right. Topic: Differences Between Islamic and Conventional Financial Instruments (Mufti Faraz al-Mahmudi).</p>
-<p class="">...........................</p>
-<p class="">Differences Between Islamic and Conventional Financial Instruments</p>
-<p class="">Posted on October 23, 2015 by Mufti Faraz al-Mahmudi</p>
-<p class="">This article defines financial instruments and highlights some of the prohibited elements in conventional financial instruments. Thereafter, the major differences between Islamic and conventional financial instruments are compared.</p>
-<p class="">A &#x27;financial instrument&#x27; is defined by IAS 32.11 as &quot;any contract that gives rise to a financial asset of one entity and a financial liability or equity instrument of another entity.&quot; (Grant Thornton 2009) Conventional financial instruments deal in intangible assets. Intangible assets represent legal claims to some future benefit. The typical benefit is a claim to future cash. (Fabozzi F.J. 2002) Thus, money is treated as a commodity and traded as such in conventional financial instruments. Islam on the other hand does not consider money as a subject matter of trade. Money has no intrinsic value; it is only a medium of exchange. Any profit earned through dealing with money (of the same currency) or the papers representing them is interest, hence prohibited. Thus, Islamic financial instruments are asset backed and deal with tangibles. (Mufti Taqi Uthmani 1998)</p>
-<p class="">Another difference between conventional and Islamic financial instruments is the relationship between the investors and issuers. In conventional financial instruments, there is generally a relationship of borrower/lender. For example, in conventional bonds, the issuers are regarded as the borrowers and the bond purchasers are in reality lenders. In Islamic financial instruments, the relationship is commonly some form of partnership, agency, lessor/lessee or buyer/seller. For example, in a Diminishing Musharakah, the financier and client have a partnership relationship as well as a lessor/lessee. In a Murabahah, the financier is a seller and the client is a purchaser.</p>
-<p class="">Risk taking is also a major distinction between conventional and Islamic financial instruments. In conventional instruments, the financiers do not share the risk. Risk is transferred to the client. In Islamic financial instruments, the financiers must bear some risk in order to profit.</p>
-<p class="">Conventional instruments are not regulated by any divine law or ethical guidelines. Profit can be gained despite lying, excessive profiteering and other unethical practices. Islamic financial instruments are governed by divine law and ethical principles. Lying, cheating, excessive profiteering, hoarding, monopolising are all prohibited.</p>
-<p class="">Conventional instruments do not have many contractual rulings and principles to make them valid. Islamic financial instruments are governed by many contractual rulings. For example, Islamic financial instruments must be free from Gharar (uncertainty). Hence, contracts cannot be pegged upon uncertain events or forwarded to future dates. Jahalah fahishah (excessive ambiguity) is another prohibited element in contracts. Any ambiguity which has the potential to lead to argumentation and dispute will make a contract voidable. Thus, a sale of a mobile phone without stating the specifications and model will be a voidable contract.</p>
-<p class="">In conclusion, Islamic financial instruments must be asset backed, involve risk sharing and must work within the framework of Islamic law. In contrast, conventional financial instruments are bereft of the former guidelines and principles.</p>
-<p class="">Bibliography</p>
-<p class="">Fabozzi F. J. (2002), &quot;Overview of Financial Instruments&quot; in The Handbook of Financial Instruments, (Fabozzi, Editor), New Jersey: Wiley &amp; Sons, Inc.</p>
-<p class="">Usmani M.T. (2000), An Introduction to Islamic Finance, Karachi: Idaaratil Ma&#x27;arif</p></section><section class="page" id="p4"><span class="pno">4</span><a class="back" href="#top">← Back to Fihris</a><h2 id="e3">3. Three core questions in any financial matter (alqalam.org.uk); wealth inequality</h2><p class="cap">Photo IMG_5297: Printed page. Handwritten: &quot;inequality&quot; above the heading &quot;Extreme wealth inequality...&quot;. Topic: 3 Core Issues in any business / financial matter (alqalam.org.uk), and wealth inequality as the result of capitalism and interest (ribaa).</p>
-<p class="">http://alqalam.org.uk/about/</p>
-<p class="">3 Core Issues in any business / financial matter:</p>
-<p class="">There are &#x27;three core questions&#x27; explained below, which if applied to any business / financial matter can hand, can help clarify permissibility:</p>
-<p class="" style="margin-left:0.5em">1) Is the subject matter permissible? - For example, can a supermarket cashier sell alcohol or lottery tickets?</p>
-<p class="" style="margin-left:0.5em">2) Is there any interest based finance involved? - For example, can a university student fund their tuition fees through an interest bearing loan?</p>
-<p class="" style="margin-left:0.5em">3) Is there a valid contract acceptable in shariah? The four contract clauses below tend to be where contract issues may most frequently arise:</p>
-<p class="" style="margin-left:1.5em">3 a) Penalty Clauses - For example, a contract may require interest to be paid in case of late payment</p>
-<p class="" style="margin-left:1.5em">3 b) Possession of sale goods - For example, selling a commodity which one does not actually possess at the time of sale.</p>
-<p class="" style="margin-left:1.5em">3 c) Excessive uncertainty (Gharar) - For example, insurance contracts where one cannot know the value of any claims (in any) are to be made during the period of insurance.</p>
-<p class="" style="margin-left:1.5em">3 d) Interlinked contracts - For example, where a contract for renting out a share in a property becomes linked to a contract to buy a property.</p>
-<p class="">By applying the &#x27;three core questions&#x27; above to any financial matter, we feel it is easier for permissibility to be ascertained. Please note the Q&amp;A section of this website can help answer many of the wide range of scenarios arising when these &#x27;three core questions&#x27; are applied to daily &#x27;real life&#x27; scenarios.</p>
-<p class="">...........................................</p>
-<p class="">Extreme wealth inequality and disparity: the result of capitalism and interest (ribaa)</p>
-<p class="">The 12 richest billionaires own more wealth than half of the world.</p>
-<p class="">And the richest 1% of adults own about 37% of all the world&#x27;s wealth, while the poorest 50% own only 2%. That means the top 1%-a group roughly the size of the UK&#x27;s adult population-has more than 18 times as much wealth as the entire bottom half of humanity combined.</p>
-<p class="">Another striking comparison: The top 10% own 75% of global wealth. The bottom 90%, therefore, own only 25%.</p>
-<p class="">And the concentration gets even more extreme at the very top: the wealthiest 0.001%, fewer than 60,000 people, control more wealth than the entire bottom half of humanity combined, according to the 2026 report.</p></section>
-<p class="foot"></p>
+<p class="foot">Printed English text is copied as it appears on the papers, links included. Arabic is left out and marked […] where it sat inside an English line; handwriting is left out. Page numbers in the Fihris count the photographed sheets in this order; the printed page number of each sheet is shown on the page.</p>
+<section class="page" id="p1"><span class="pno">1</span><span class="src">IMG_5296</span><a class="back" href="#top">← Back to Fihris</a><h2 id="e1">1. Differences Between Islamic and Conventional Financial Instruments (Mufti Faraz al-Mahmudi)</h2><div class="pp">no page number printed</div>
+<p><span class="dotline">...........................</span></p>
+<p><b>Differences Between Islamic and Conventional Financial Instruments</b></p>
+<p>Posted on October 23, 2015 by Mufti Faraz al-Mahmudi</p>
+<p>This article defines financial instruments and highlights some of the prohibited elements in conventional financial instruments. Thereafter, the major differences between Islamic and conventional financial instruments are compared.</p>
+<p>A ‘financial instrument’ is defined by IAS 32.11 as “any contract that gives rise to a financial asset of one entity and a financial liability or equity instrument of another entity.” (Grant Thornton 2009) Conventional financial instruments deal in intangible assets. Intangible assets represent legal claims to some future benefit. The typical benefit is a claim to future cash. (Fabozzi F.J. 2002) Thus, money is treated as a commodity and traded as such in conventional financial instruments. Islam on the other hand does not consider money as a subject matter of trade. Money has no intrinsic value; it is only a medium of exchange. Any profit earned through dealing with money (of the same currency) or the papers representing them is interest, hence prohibited. Thus, Islamic financial instruments are asset backed and deal with tangibles. (Mufti Taqi Uthmani 1998)</p>
+<p>Another difference between conventional and Islamic financial instruments is the relationship between the investors and issuers. In conventional financial instruments, there is generally a relationship of borrower/lender. For example, in conventional bonds, the issuers are regarded as the borrowers and the bond purchasers are in reality lenders. In Islamic financial instruments, the relationship is commonly some form of partnership, agency, lessor/lessee or buyer/seller. For example, in a Diminishing Musharakah, the financier and client have a partnership relationship as well as a lessor/lessee. In a Murabahah, the financier is a seller and the client is a purchaser.</p>
+<p>Risk taking is also a major distinction between conventional and Islamic financial instruments. In conventional instruments, the financiers do not share the risk. Risk is transferred to the client. In Islamic financial instruments, the financiers must bear some risk in order to profit.</p>
+<p>Conventional instruments are not regulated by any divine law or ethical guidelines. Profit can be gained despite lying, excessive profiteering and other unethical practices. Islamic financial instruments are governed by divine law and ethical principles. Lying, cheating, excessive profiteering, hoarding, monopolising are all prohibited.</p>
+<p>Conventional instruments do not have many contractual rulings and principles to make them valid. Islamic financial instruments are governed by many contractual rulings. For example, Islamic financial instruments must be free from <i>Gharar</i> (uncertainty). Hence, contracts cannot be pegged upon uncertain events or forwarded to future dates. <i>Jahalah fahishah</i> (excessive ambiguity) is another prohibited element in contracts. Any ambiguity which has the potential to lead to argumentation and dispute will make a contract voidable. Thus, a sale of a mobile phone without stating the specifications and model will be a voidable contract.</p>
+<p>In conclusion, Islamic financial instruments must be asset backed, involve risk sharing and must work within the framework of Islamic law. In contrast, conventional financial instruments are bereft of the former guidelines and principles.</p>
+<p><b>Bibliography</b></p>
+<p>Fabozzi F. J. (2002), <i>“Overview of Financial Instruments”</i> in The Handbook of Financial Instruments, (Fabozzi, Editor), New Jersey: Wiley &amp; Sons, Inc.</p>
+<p>Usmani M.T. (2000), <i>An Introduction to Islamic Finance</i>, Karachi: Idaaratil Ma’arif</p></section><section class="page" id="p2"><span class="pno">2</span><span class="src">IMG_5297</span><a class="back" href="#top">← Back to Fihris</a><h2 id="e2">2. 3 Core Issues in any business / financial matter (alqalam.org.uk) · Extreme wealth inequality and disparity</h2><div class="pp">no page number printed</div>
+<p><a href="http://alqalam.org.uk/about/" target="_blank" rel="noopener noreferrer">http://alqalam.org.uk/about/</a></p>
+<p>3 Core Issues in any business / financial matter:</p>
+<p>There are ‘three core questions’ explained below, which if applied to any business / financial matter can hand, can help clarify permissibility:</p>
+<p>1) Is the subject matter permissible? – For example, can a supermarket cashier sell alcohol or lottery tickets?</p>
+<p>2) Is there any interest based finance involved? – For example, can a university student fund their tuition fees through an interest bearing loan?</p>
+<p>3) Is there a valid contract acceptable in shariah? The four contract clauses below tend to be where contract issues may most frequently arise:</p>
+<p>3 a) <u>Penalty Clauses</u> – For example, a contract may require interest to be paid in case of late payment<br>3 b) <u>Possession of sale goods</u> – For example, selling a commodity which one does not actually possess at the time of sale.<br>3 c) <u>Excessive uncertainty (Gharar)</u> – For example, insurance contracts where one cannot know the value of any claims (in any) are to be made during the period of insurance.<br>3 d) <u>Interlinked contracts</u> – For example, where a contract for renting out a share in a property becomes linked to a contract to buy a property.<br>By applying the ‘three core questions’ above to any financial matter, we feel it is easier for permissibility to be ascertained. Please note the Q&amp;A section of this website can help answer many of the wide range of scenarios arising when these ‘three core questions’ are applied to daily ‘real life’ scenarios.</p>
+<hr class="dots">
+<p><u><b>Extreme wealth inequality and disparity: the result of capitalism and interest (ribaa)</b></u></p>
+<p>The 12 richest billionaires own more wealth than half of the world.</p>
+<p>And the richest 1% of adults own about 37% of all the world’s wealth, while the poorest 50% own only 2%. That means the top 1%—a group roughly the size of the UK’s adult population—has more than 18 times as much wealth as the entire bottom half of humanity combined.</p>
+<p>Another striking comparison: The top 10% own 75% of global wealth. The bottom 90%, therefore, own only 25%.</p>
+<p>And the concentration gets even more extreme at the very top: the wealthiest 0.001%, fewer than 60,000 people, control more wealth than the entire bottom half of humanity combined, according to the 2026 report.</p></section>
+
+<p class="foot">The Dawrat al-Hadith study plan (IMG_5294, IMG_5295) is Arabic only, so nothing from it is copied here.</p>
 </div></body></html>
